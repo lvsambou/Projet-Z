@@ -29,7 +29,7 @@ class RecipeGenerator extends AbstractController
     /**
      * @Route("/generator/results/{alias}", name="recipegenerator_recipe", methods={"GET"})
      */
-    public function recipe(): Response
+    public function recipe($alias): Response
     {
         return $this->render('recipegenerator/recipe.html.twig');
     }
