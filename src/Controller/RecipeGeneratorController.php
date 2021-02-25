@@ -7,10 +7,11 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 
-class RecipeGenerator extends AbstractController
+class RecipeGeneratorController extends AbstractController
 {
     /**
-     * @Route("/generator", name="recipegenerator_generator", methods={"GET"})
+     * ex. http://localhost:8000/generator
+     * @Route("/generator", name="generator", methods={"GET"})
      */
     public function generator(): Response
     {
@@ -18,7 +19,8 @@ class RecipeGenerator extends AbstractController
     }
 
     /**
-     * @Route("/generator/results", name="recipegenerator_results", methods={"GET"})
+     * ex. http://localhost:8000/generator/results
+     * @Route("/generator/results", name="results", methods={"GET"})
      *
      */
     public function results(): Response
@@ -27,7 +29,8 @@ class RecipeGenerator extends AbstractController
     }
 
     /**
-     * @Route("/generator/results/{alias}", name="recipegenerator_recipe", methods={"GET"})
+     * ex. http://localhost:8000/generator/results/{alias}
+     * @Route("/generator/results/{alias}", name="recipe", methods={"GET"})
      */
     public function recipe($alias): Response
     {
