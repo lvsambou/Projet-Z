@@ -8,7 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProfileController extends AbstractController
 {
-    #[Route('/profile', name: 'profile')]
+    /**
+     * @Route("/profile", name="profile", methods={"GET|POST"})
+     * @return Response
+     */
     public function index(): Response
     {
         return $this->render('profile/profile.html.twig', [
