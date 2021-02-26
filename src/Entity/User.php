@@ -71,7 +71,7 @@ class User implements UserInterface
     private $updatedAt;
 
     /**
-     * @ORM\Column(type="string", length=15)
+     * @ORM\Column(type="string", length=15, nullable=true)
      */
     private $dateofbirth;
 
