@@ -20,7 +20,8 @@ class ContactController extends AbstractController
     public function contact()
     {
         $form = $this->createFormBuilder()
-            ->add('fullname', TextType::class)
+            ->add('firstname', TextType::class)
+            ->add('lastname', TextType::class)
             ->add('email', EmailType::class)
             ->add('phone', TelType::class)
             ->add('subject', TextType::class)
