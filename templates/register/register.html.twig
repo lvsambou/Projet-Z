@@ -6,8 +6,10 @@
     {{ parent() }}
     <script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script>
     <script>
+        let ClassicEditor;
         ClassicEditor.create( document.querySelector( '#form_content' ) );
     </script>
+    <link rel="style.css" href="{{ asset('css/test.css') }}"
 {% endblock %}
 
 {% block body %}
@@ -18,11 +20,12 @@
 <div class="py-5 bg-light">
     <div class="container">
         <div class="row">
-            <div class="col-10-mx-auto">
+            <div class="container-fluid">
                 {{ form( form) }}
             </div>
         </div>
     </div>
+</div>
 
 {% endblock %}
 
