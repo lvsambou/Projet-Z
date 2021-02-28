@@ -37,6 +37,12 @@ class Products
      */
     private $quantity;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Farmer::class, inversedBy="products")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $farmer;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -86,6 +92,18 @@ class Products
     public function setQuantity(string $quantity): self
     {
         $this->quantity = $quantity;
+
+        return $this;
+    }
+
+    public function getFarmer(): ?Farmer
+    {
+        return $this->farmer;
+    }
+
+    public function setFarmer(?Farmer $farmer): self
+    {
+        $this->farmer = $farmer;
 
         return $this;
     }
