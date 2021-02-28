@@ -20,7 +20,7 @@ class UserController extends AbstractController
 {
     /**
      * ex. http://localhost:8000/register
-     * @Route("/register", name="user_register", methods={"GET|POST"})
+     * @Route("/register", name="register", methods={"GET|POST"})
      * @param Request $request
      * @param UserPasswordEncoderInterface $encoder
      * @return RedirectResponse|Response
