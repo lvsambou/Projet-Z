@@ -33,25 +33,55 @@ class UserController extends AbstractController
 
         $form = $this->createFormBuilder($user)
             ->add('firstname', TextType::class, [
-                'label' => "First Name"
+                'label' => "First Name",
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Type first name here']
             ])
             ->add('lastname', TextType::class, [
-                'label' => "Last Name"
+                'label' => "Last Name",
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Type last name here'
+                ]
             ])
             ->add('email', EmailType::class, [
-                'label' => "Email"
+                'label' => "Email",
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Type your email'
+                ]
+
             ])
             ->add('password', PasswordType::class, [
-                'label' => "Password"
+                'label' => "Password",
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Type Your Password'
+                ]
+
             ])
             ->add('address', TextType::class, [
-                'label' => "Address"
+                'label' => "Address",
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Type Your Address'
+                ]
+
             ])
             ->add('zipcode', TextType::class, [
-                'label' => "Zipcode"
+                'label' => "Zipcode",
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Type Your Zipcode'
+                ]
             ])
             ->add('city', TextType::class, [
-                'label' => "City"
+                'label' => "City",
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Type Your City here'
+                ]
             ])
            ->add('submit', SubmitType::class, [
                'label' => "Submit"
