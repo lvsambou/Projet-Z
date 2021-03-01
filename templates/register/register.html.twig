@@ -4,12 +4,7 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script>
-    <script>
-        let ClassicEditor;
-        ClassicEditor.create( document.querySelector( '#form_content' ) );
-    </script>
-    <link rel="style.css" href="{{ asset('css/test.css') }}"
+    <link href="{{ asset('asset/css/test.css') }}" rel="stylesheet"/>
 {% endblock %}
 
 {% block body %}
@@ -21,7 +16,9 @@
     <div class="container">
         <div class="row">
             <div class="container-fluid">
+                <div class="col-10 mx-auto">
                 {{ form( form) }}
+                </div>
             </div>
         </div>
     </div>

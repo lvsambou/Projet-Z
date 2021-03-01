@@ -20,12 +20,50 @@ class ContactController extends AbstractController
     public function contact()
     {
         $form = $this->createFormBuilder()
-            ->add('firstname', TextType::class)
-            ->add('lastname', TextType::class)
-            ->add('email', EmailType::class)
-            ->add('phone', TelType::class)
-            ->add('subject', TextType::class)
-            ->add('message', TextareaType::class)
+            ->add('firstname', TextType::class, [
+                'label' => 'First Name',
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Type your First Name here'
+                ]
+            ])
+            ->add('lastname', TextType::class, [
+                'label' => 'Last Name',
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Type your Last Name here'
+                ]
+            ])
+            ->add('email', EmailType::class, [
+                'label' => 'Email',
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Type your email here'
+                ]
+            ])
+            ->add('phone', TelType::class, [
+                'label' => 'Phone Number',
+                'attr'=> [
+                    'class' => 'form-control',
+                    'placeholder' => 'Type your Phone Number here'
+                ]
+            ])
+            ->add('subject', TextType::class, [
+                'label' => 'Subject',
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Type the subject of your contact request here'
+                ]
+
+            ])
+            ->add('message', TextareaType::class, [
+                'label' => 'Message',
+                'attr' => [
+                    'class' => 'form-control',
+                    'placeholder' => 'Type the details of your contact request here'
+                ]
+
+            ])
             ->add('submit', SubmitType::class)
             ->getForm();
 

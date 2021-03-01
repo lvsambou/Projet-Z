@@ -35,21 +35,21 @@ class UserController extends AbstractController
             ->add('firstname', TextType::class, [
                 'label' => "First Name",
                 'attr' => [
-                    'class' => 'form-control',
-                    'placeholder' => 'Type first name here']
+                    'class' => 'formtest',
+                    'placeholder' => 'Type your First Name here']
             ])
             ->add('lastname', TextType::class, [
                 'label' => "Last Name",
                 'attr' => [
                     'class' => 'form-control',
-                    'placeholder' => 'Type last name here'
+                    'placeholder' => 'Type your Last Name here'
                 ]
             ])
             ->add('email', EmailType::class, [
                 'label' => "Email",
                 'attr' => [
                     'class' => 'form-control',
-                    'placeholder' => 'Type your email'
+                    'placeholder' => 'Type your Email here'
                 ]
 
             ])
@@ -57,7 +57,7 @@ class UserController extends AbstractController
                 'label' => "Password",
                 'attr' => [
                     'class' => 'form-control',
-                    'placeholder' => 'Type Your Password'
+                    'placeholder' => 'Type your Password here'
                 ]
 
             ])
@@ -65,7 +65,7 @@ class UserController extends AbstractController
                 'label' => "Address",
                 'attr' => [
                     'class' => 'form-control',
-                    'placeholder' => 'Type Your Address'
+                    'placeholder' => 'Type your Address here'
                 ]
 
             ])
@@ -73,14 +73,14 @@ class UserController extends AbstractController
                 'label' => "Zipcode",
                 'attr' => [
                     'class' => 'form-control',
-                    'placeholder' => 'Type Your Zipcode'
+                    'placeholder' => 'Type your Zipcode here'
                 ]
             ])
             ->add('city', TextType::class, [
                 'label' => "City",
                 'attr' => [
                     'class' => 'form-control',
-                    'placeholder' => 'Type Your City here'
+                    'placeholder' => 'Type the name of your City here'
                 ]
             ])
            ->add('submit', SubmitType::class, [
