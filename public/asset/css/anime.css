@@ -1,0 +1,32 @@
+body{
+    background: #F2ECE9 ;
+    color: rgb(48, 45, 45);
+    padding: 5.691519vw;
+}
+
+.presentation{
+    font-size:  5.691519vw;
+    font-weight: bold;
+    color: rgb(41, 40, 40);
+
+}
+
+.texte{
+    font-size: 1.70745589vw;
+    font-weight: bold italic;
+    color: rgb(41, 40, 40);
+}
+
+.dawning{
+    font-family: 'Dawning of a New Day', cursive;
+    font-size: 8.537279vw;
+}
+.bitter{
+    font-family: 'Bitter', serif;
+}
+
+
+.enterthefoodies{
+    font-size: 1.1383039vw;
+    text-decoration: none;
+}

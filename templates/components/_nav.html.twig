@@ -30,7 +30,7 @@
                     My Account
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Sign Up</a>
+                    <a class="dropdown-item" href="{{ path('register', { 'alias' : 'register' }) }}">Sign Up</a>
                     <a class="dropdown-item" href="{{ path('login', { 'alias' : 'login' }) }}">Sign In</a>
                 </div>
         </ul>
