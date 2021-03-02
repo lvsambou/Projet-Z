@@ -59,7 +59,7 @@ class Contact
 
     public function setFirstname(string $firstname): self
     {
-        $this->firstnamename = $firstname;
+        $this->firstname = $firstname;
 
         return $this;
     }
