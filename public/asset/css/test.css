@@ -2,6 +2,19 @@
     height: 70px!important;
     width: 400px!important;
     border: none!important;
-;
 
+
+}
+label
+{
+    display: none!important;
+}
+.show-label
+{
+    display: block!important;
+}
+.margin-tb
+{
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
