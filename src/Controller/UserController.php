@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -15,6 +16,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Validator\Constraints\IsFalse;
+use Symfony\Component\Validator\Constraints\IsTrue;
 
 class UserController extends AbstractController
 {
@@ -33,56 +36,70 @@ class UserController extends AbstractController
 
         $form = $this->createFormBuilder($user)
             ->add('firstname', TextType::class, [
-                'label' => "First Name",
+
                 'attr' => [
-                    'class' => 'formtest',
-                    'placeholder' => 'Type your First Name here']
+                    'class' => 'formtest mt-4',
+                    'placeholder' => 'First Name']
             ])
             ->add('lastname', TextType::class, [
-                'label' => "Last Name",
+
                 'attr' => [
-                    'class' => 'form-control',
-                    'placeholder' => 'Type your Last Name here'
+                    'class' => 'form-control mt-4 ',
+                    'placeholder' => 'Last Name'
                 ]
             ])
             ->add('email', EmailType::class, [
-                'label' => "Email",
+
                 'attr' => [
-                    'class' => 'form-control',
-                    'placeholder' => 'Type your Email here'
+                    'class' => 'form-control mt-4',
+                    'placeholder' => 'Email'
                 ]
 
             ])
             ->add('password', PasswordType::class, [
-                'label' => "Password",
+
                 'attr' => [
-                    'class' => 'form-control',
-                    'placeholder' => 'Type your Password here'
+                    'class' => 'form-control mt-4',
+                    'placeholder' => 'Password'
                 ]
 
             ])
             ->add('address', TextType::class, [
-                'label' => "Address",
+
                 'attr' => [
-                    'class' => 'form-control',
-                    'placeholder' => 'Type your Address here'
+                    'class' => 'form-control mt-4',
+                    'placeholder' => 'Address'
                 ]
 
             ])
             ->add('zipcode', TextType::class, [
-                'label' => "Zipcode",
+
                 'attr' => [
-                    'class' => 'form-control',
-                    'placeholder' => 'Type your Zipcode here'
+                    'class' => 'form-control mt-4',
+                    'placeholder' => 'Zipcode'
                 ]
             ])
             ->add('city', TextType::class, [
-                'label' => "City",
+
                 'attr' => [
-                    'class' => 'form-control',
-                    'placeholder' => 'Type the name of your City here'
+                    'class' => 'form-control mt-4',
+                    'placeholder' => 'City'
                 ]
             ])
+
+           ->add('tou', CheckboxType::class, [
+               'mapped' => false,
+               'label' => 'I agree and accept #TERMS_OF_USE_LINK#',
+               'label_attr' => [
+                   'class' => 'show-label'
+               ],
+               'constraints' => [
+                   new IsTrue([
+                       'message' => 'I know, it\'s silly, but you must agree to our terms.'
+                   ])
+               ]
+           ])
+
            ->add('submit', SubmitType::class, [
                'label' => "Submit"
            ])
@@ -93,6 +110,11 @@ class UserController extends AbstractController
 
         #si le formulaire est soumis et validé
         if($form->isSubmitted() && $form->isValid()){
+
+//            if(true === $form['tou']->getData()){
+//                $user->setTou($this = ‘terms ok’);
+//
+//            }
 
             #Encodage du mot passe
             $user->setPassword(

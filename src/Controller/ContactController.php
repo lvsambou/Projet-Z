@@ -20,47 +20,46 @@ class ContactController extends AbstractController
     public function contact()
     {
         $form = $this->createFormBuilder()
-            ->add('firstname', TextType::class, [
-                'label' => 'First Name',
+            ->add('lastname', TextType::class, [
+
                 'attr' => [
-                    'class' => 'form-control',
-                    'placeholder' => 'Type your First Name here'
+                    'class' => 'form-control mt-4',
+                    'placeholder' => 'Last Name'
                 ]
             ])
-            ->add('lastname', TextType::class, [
-                'label' => 'Last Name',
+            ->add('firstname', TextType::class, [
+
                 'attr' => [
-                    'class' => 'form-control',
-                    'placeholder' => 'Type your Last Name here'
+                    'class' => 'form-control mt-4',
+                    'placeholder' => 'First Name'
                 ]
             ])
             ->add('email', EmailType::class, [
-                'label' => 'Email',
+
                 'attr' => [
-                    'class' => 'form-control',
-                    'placeholder' => 'Type your email here'
+                    'class' => 'form-control mt-4',
+                    'placeholder' => 'Email'
                 ]
             ])
             ->add('phone', TelType::class, [
-                'label' => 'Phone Number',
+
                 'attr'=> [
-                    'class' => 'form-control',
-                    'placeholder' => 'Type your Phone Number here'
+                    'class' => 'form-control mt-4',
+                    'placeholder' => 'Phone number'
                 ]
             ])
             ->add('subject', TextType::class, [
-                'label' => 'Subject',
+
                 'attr' => [
-                    'class' => 'form-control',
-                    'placeholder' => 'Type the subject of your contact request here'
+                    'class' => 'form-control mt-4',
+                    'placeholder' => 'Subject'
                 ]
 
             ])
             ->add('message', TextareaType::class, [
-                'label' => 'Message',
                 'attr' => [
-                    'class' => 'form-control',
-                    'placeholder' => 'Type the details of your contact request here'
+                    'class' => 'form-control mt-4',
+                    'placeholder' => 'Message'
                 ]
 
             ])

@@ -80,6 +80,11 @@ class User implements UserInterface
      */
     private $profilephoto;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $tou;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -265,6 +270,18 @@ class User implements UserInterface
     public function setProfilephoto(?string $profilephoto): self
     {
         $this->profilephoto = $profilephoto;
+
+        return $this;
+    }
+
+    public function getTou(): ?string
+    {
+        return $this->tou;
+    }
+
+    public function setTou(string $tou): self
+    {
+        $this->tou = $tou;
 
         return $this;
     }
