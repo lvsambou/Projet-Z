@@ -43,25 +43,14 @@ class DefaultController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstr
         ]);
     }
 
-
     /**
-     * Page / Action Legal notices
-     * ex. http://localhost:8000/legal-notices
-     * @Route("/legal-notices", name="legal-notices", methods={"GET"})
+     * Page - legal terms, privacy policy, GDPR
+     * url - http://localhost:8000/legals
+     * @Route("/legals", name="legals", methods={"legals"})
      */
-    public function legalNotices(): \Symfony\Component\HttpFoundation\Response
+    public function legals(): \Symfony\Component\HttpFoundation\Response
     {
-        return $this->render("default/legal-notices.html.twig");
-    }
-#A voir avec Sanou à propos de la suppression des doublons legals terms
-    /**
-     * Page / Action CGU
-     * ex. http://localhost:8000/cgu
-     * @Route("/cgu", name="cgu", methods={"GET"})
-     */
-    public function cgu()
-    {
-        return $this->render("default/cgu.html.twig");
+        return $this->render('default/legals.html.twig');
     }
 
     /**
