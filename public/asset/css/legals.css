@@ -1,0 +1,41 @@
+h1{
+    font-family: 'Dawning of a New Day', cursive;
+}
+        .fs-18{
+            font-size: 0.9433962264150944vw;
+            /* font-size: 20px; */
+        }
+.p-lh{
+    line-height: 170%;
+}
+
+.section-bg{
+    background-color: #F2ECE9;
+}
+
+.wh-100-80{
+    height: 100% !important;
+    width: 80% !important;
+    }
+    
+    .wh-100-50{
+        height: 100%!important;
+        width: 50%!important;
+    }
+
+
+/* Mediaqueries */
+@media screen and (max-width: 770px){
+    .wh-100-80 {
+        height: 100%!important;
+        width: 100%!important;
+    }
+    .fs-54{
+        font-size: 34px;
+
+    }
+    .fs-18{
+        font-size: 8px;
+    }
+}
+

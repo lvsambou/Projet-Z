@@ -1,0 +1,144 @@
+/* Couleur de fond */
+
+body{
+    background: #FFFDFA;
+}
+
+.readMore, .blockquote-footer{
+    text-decoration: none;
+    color: black im !important;
+}
+
+.dropdown-item, .nav-link, .navbar-brand {
+    text-decoration: none; color: black;
+}
+
+
+/* Police et tailles */
+
+.container {
+    max-width: 59.813em;
+}
+
+*{
+    font-family: 'Bitter', serif;
+}
+
+span {
+    font-family: 'Libre Baskerville', serif i !important; font-style: italic;
+}
+
+.count{
+    font-style:bold im !important;
+}
+
+h5{
+    font-weight:bold i !important;
+}
+
+h3{
+    font-style: bold;
+}
+
+.dawning, .readMore, .blockquote-footer{
+    font-family: 'Dawning of a New Day', cursive;
+}
+
+
+
+
+
+
+.fondBlockUn{
+    position: absolute;
+    height: 37.125em;
+    left: 4.875em;
+    top: 5.563em;
+    background: #F2ECE9;
+    /* filter: blur(2px);    */
+}
+
+/* Positionnement */
+
+.fondBlockDeux{
+    position: absolute; 
+    height: 10.5em; 
+    left: 4.875em; 
+    top: 48.625em; 
+    background-color: #F2ECE9;
+    /* filter: blur(0.125rem); */} 
+
+
+
+.fondBlockTrois{
+    position: absolute;
+    height: 37.25em;
+    left: 4.875em;
+    top: 65.5em;
+    background: #F2ECE9;
+    /* filter: blur(0.125rem); */}
+
+.fondBlockQuatre{
+    position: absolute;
+    height: 35.25em; 
+    left: 4.875em; 
+    top: 109.688em;
+    background: #F2ECE9;
+    /* filter: blur(0.125rem); */}
+
+.card-img-top{
+    height: 25em;
+
+}
+.card-title{
+    left: 8em;
+}
+
+
+.textBlockUn {
+    font-style: italic;
+}
+
+
+
+.branche{
+    top: 30em; 
+}
+
+
+.cardTomato {
+    height: 26em;
+}
+
+.card-img-top{
+    border-radius: 0.938em;
+}
+
+/* Animation - Surlignement de la nav */ 
+
+.navAnimation{
+    display: inline-block;
+}
+
+.navAnimation:after {
+    content: "";
+    display: block;
+    height: 0.25em;
+    width: 0%;
+    margin-bottom: 9px;
+    background-color: #000;
+    transition: width 0.4s;
+}
+
+.navAnimation:hover:after {
+    width: 100%;
+}
+
+/* Partie responsive adaptative */ 
+
+@media screen and (mad-width: 988px)
+{
+    .container{width: 46.875em;}
+    .fondBlockUn, .fondBlockDeux, .fondBlockTrois, .fondBlockQuatre{width: 40em; }
+    .card-img-top{width: 22.188em;}
+}

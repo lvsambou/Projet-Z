@@ -1,9 +1,165 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Accueil{% endblock %}
-
+{% block title %}Home{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('asset/css/home.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('asset/css/bootstrap.min.css') }}" rel="stylesheet"/> >
+{% endblock %}
 {% block body %}
 <body>
             <h1>Home</h1>
+            <!-- Fond block 1 -->
+            <div class="container fondBlockUn">
 
+                <!-- Card 1 -->
+
+                <a href="" class="btn stretched-link" target="_blank">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <img src="{{ asset('asset/img/recette1.jpg') }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="font-weight-bold" class="card-title">Salted</h5>
+                            </div>
+                        </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="" class="btn stretched-link" target="_blank">
+                    <div class="col">
+                        <img src="{{ asset('asset/img/sucre2.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="font-weight-bold" class="card-title">Sweets</h5>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="" class="btn stretched-link" target="_blank">
+                    <div class="col">
+                        <img src="{{ asset('asset/img/beveragesection.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="font-weight-bold" class="card-title">Beverages</h5>
+                        </div>
+                    </div>
+                </a>
+            </div> <!-- Fin row 1-->
+
+            <p class="text-center textBlockUn">Foodies&Co is committed to sustainable trade <br>
+                Generate your recipe and get your ingredients at your local food producer</p>
+            </div> <!-- Fin container block 1 -->
+
+
+
+            <!-- Fond block 2 -->
+            <div class="container fondBlockDeux">
+                <div class="container">
+                    <p class="text-center textBlockUn"><span class="dawning">Subscribe</span> for email updates<br>
+                        and get a free Cookbook with our top 25 recipes</p>
+
+                    <!-- Form newlestter -->
+
+                    <form>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Email">
+                            </div>
+                        </div> <br>
+                        <div class="text-center"><a class="btn btn-sample" href="#" role="button">Go !</a>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+
+            <!-- Petite image de fond (nb : je n'arrive pas à la placer..)-->
+            <!-- <div class="text-center branche"><img class="branche" src="{{asset('asset/img/branche.png') }}"></div> -->
+
+
+            <!-- Fond block 3 -->
+            <div class="container fondBlockTrois">
+                <div class="container">
+                    <p class="h3">Theme of the week </p>
+                    <p class="textBlockUn">This week, we invite you to discover or rediscover Mediterranean dishes adapted to winter.<br>
+                        They warm us with their heat and bring us the sun. <br>
+                        Iconic ingredients such as tomato, basil and olive oil are essential ... <a class="readMore">Read more</a></p>
+
+                    <!-- img -->
+
+                    <div class="card bg-dark text-white">
+                        <img class="card-img cardTomato" src="{{ asset('asset/img/tomatoplate.jpg') }}" alt="Card image">
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+            <!-- Fond block 4 -->
+            <div class="container fondBlockQuatre">
+                <div class="container">
+                    <p class="h3">Latest recipes </p>
+
+
+                    <!-- Card 1 -->
+
+                    <a href="" class="btn stretched-link" target="_blank">
+                        <div class="row row-cols-1 row-cols-md-3 g-4">
+                            <div class="col">
+                                <img src="{{ asset('asset/img/noodles.jpg') }}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="font-weight-bold" class="card-title">Lo Mein noodles</h5><br>
+                                    <blockquote class="blockquote text-right">
+                                        <footer class="blockquote-footer">Read more...</footer>
+                                    </blockquote>
+
+                                </div>
+                            </div>
+                    </a>
+
+                    <!-- Card 2 -->
+                    <a href="" class="btn stretched-link" target="_blank">
+                        <div class="col">
+                            <img src="{{ asset('asset/img/saltysection.jpg') }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="font-weight-bold" class="card-title">Coriander chickpeas</h5><br>
+                                <blockquote class="blockquote text-right">
+                                    <footer class="blockquote-footer">Read more...</footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 3 -->
+                    <a href="" class="btn stretched-link" target="_blank">
+                        <div class="col">
+                            <img src="{{ asset('asset/img/rusticpan.jpg') }}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="font-weight-bold" class="card-title">Rustic pan</h5><br>
+                                <blockquote class="blockquote text-right">
+                                    <footer class="blockquote-footer">Read more...</footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </a>
+
+
+
+
+                </div>
+
+
+
+            </div>
+            </main>
+            </div>
+{% block js %}
+    <script src="{{ asset('asset/js/home.js') }}"></script>
+{% endblock %}
 {% endblock %}
