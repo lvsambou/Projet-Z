@@ -18,14 +18,14 @@ class Category
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=25)
      */
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=100, nullable=true)
+     * @ORM\Column(type="string", length=25)
      */
-    private $nameApi;
+    private $alias;
 
     public function getId(): ?int
     {
@@ -37,21 +37,21 @@ class Category
         return $this->name;
     }
 
-    public function setName(?string $name): self
+    public function setName(string $name): self
     {
         $this->name = $name;
 
         return $this;
     }
 
-    public function getNameApi(): ?string
+    public function getAlias(): ?string
     {
-        return $this->nameApi;
+        return $this->alias;
     }
 
-    public function setNameApi(?string $nameApi): self
+    public function setAlias(string $alias): self
     {
-        $this->nameApi = $nameApi;
+        $this->alias = $alias;
 
         return $this;
     }

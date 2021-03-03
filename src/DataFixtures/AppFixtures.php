@@ -272,6 +272,25 @@ class AppFixtures extends Fixture
         $manager->persist($farmer);
 
 
+        #Data set for category, working with our real internal category set
+        $salty = new Category();
+        $salty->setName('Salty')
+            ->setAlias('salty');
+        $manager->persist($salty);
+
+        $sweets = new Category();
+        $sweets->setName('Sweets')
+            ->setAlias('sweets');
+        $manager->persist($sweets);
+
+        $beverages = new Category();
+        $beverages->setName('Beverages')
+            ->setAlias('beverages');
+        $manager->persist($beverages);
+
+        $manager->flush();
+
+
         $manager->flush();
     }
 }
