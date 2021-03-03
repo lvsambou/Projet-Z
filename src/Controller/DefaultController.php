@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Category;
+use http\Env\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -22,60 +24,36 @@ class DefaultController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstr
      * ex. http://localhost:8000/home
      * @Route("/home", name="index", methods={"GET"})
      */
-    public function index()
+    public function index(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render("default/index.html.twig");
     }
 
     /**
-     * Page / Action Recipes
-     * ex. http://localhost:8000/recipes
-     * @Route("/recipes", name="recipes", methods={"GET"})
+     * Page - Recipes : dropdown menu
+     * url - http://localhost:8000/recipes/{alias}
+     * @Route("/recipes/{alias}", name="default_category", methods={"GET"})
+     * @param Category $category
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function recipes()
+    public function category(Category $category): \Symfony\Component\HttpFoundation\Response
     {
-        return $this->render("default/recipes.html.twig");
+        return $this->render('default/category.html.twig', [
+            'category'=>$category #store and return the categories data from DB
+        ]);
     }
 
-    /**
-     * Page / Action Beverages
-     * ex. http://localhost:8000/recipes/beverages
-     * @Route("/recipes/beverages", name="beverages", methods={"GET"})
-     */
-    public function beverages()
-    {
-        return $this->render("default/beverages.html.twig");
-    }
 
-    /**
-     * Page / Action Salty
-     * ex. http://localhost:8000/recipes/salty
-     * @Route("/recipes/salty", name="salty", methods={"GET"})
-     */
-    public function salty()
-    {
-        return $this->render("default/salty.html.twig");
-    }
-
-    /**
-     * Page / Action Sweetened
-     * ex. http://localhost:8000/recipes/sweety
-     * @Route("/recipes/sweety", name="sweety", methods={"GET"})
-     */
-    public function sweety()
-    {
-        return $this->render("default/sweety.html.twig");
-    }
     /**
      * Page / Action Legal notices
      * ex. http://localhost:8000/legal-notices
      * @Route("/legal-notices", name="legal-notices", methods={"GET"})
      */
-    public function legalNotices()
+    public function legalNotices(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render("default/legal-notices.html.twig");
     }
-
+#A voir avec Sanou à propos de la suppression des doublons legals terms
     /**
      * Page / Action CGU
      * ex. http://localhost:8000/cgu
@@ -88,10 +66,10 @@ class DefaultController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstr
 
     /**
      * Page / Action Random recipe
-     * ex. http://localhost:8000/recipes/random-recipe
-     * @Route("/recipes/random-recipe", name="random-recipe", methods={"GET"})
+     * ex. http://localhost:8000/random-recipe
+     * @Route("/random-recipe", name="random-recipe", methods={"GET"})
      */
-    public function randomRecipe()
+    public function randomRecipe(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render("default/random-recipe.html.twig");
     }

@@ -20,27 +20,17 @@ class Recipe
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $title;
-
-    /**
-     * @ORM\Column(type="string", length=35)
-     */
-    private $areaCategory;
-
-    /**
-     * @ORM\Column(type="text")
-     */
-    private $instructions;
+    private $Title;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $imageContent;
+    private $img;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=50)
      */
-    private $ytLink;
+    private $category;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -50,7 +40,17 @@ class Recipe
     /**
      * @ORM\Column(type="text")
      */
-    private $ingredientsMesures;
+    private $ingredients;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $video;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $instructions;
 
     public function getId(): ?int
     {
@@ -59,60 +59,36 @@ class Recipe
 
     public function getTitle(): ?string
     {
-        return $this->title;
+        return $this->Title;
     }
 
-    public function setTitle(string $title): self
+    public function setTitle(string $Title): self
     {
-        $this->title = $title;
+        $this->Title = $Title;
 
         return $this;
     }
 
-    public function getAreaCategory(): ?string
+    public function getImg(): ?string
     {
-        return $this->areaCategory;
+        return $this->img;
     }
 
-    public function setAreaCategory(string $areaCategory): self
+    public function setImg(string $img): self
     {
-        $this->areaCategory = $areaCategory;
+        $this->img = $img;
 
         return $this;
     }
 
-    public function getInstructions(): ?string
+    public function getCategory(): ?string
     {
-        return $this->instructions;
+        return $this->category;
     }
 
-    public function setInstructions(string $instructions): self
+    public function setCategory(string $category): self
     {
-        $this->instructions = $instructions;
-
-        return $this;
-    }
-
-    public function getImageContent(): ?string
-    {
-        return $this->imageContent;
-    }
-
-    public function setImageContent(string $imageContent): self
-    {
-        $this->imageContent = $imageContent;
-
-        return $this;
-    }
-
-    public function getYtLink(): ?string
-    {
-        return $this->ytLink;
-    }
-
-    public function setYtLink(?string $ytLink): self
-    {
-        $this->ytLink = $ytLink;
+        $this->category = $category;
 
         return $this;
     }
@@ -129,14 +105,38 @@ class Recipe
         return $this;
     }
 
-    public function getIngredientsMesures(): ?string
+    public function getIngredients(): ?string
     {
-        return $this->ingredientsMesures;
+        return $this->ingredients;
     }
 
-    public function setIngredientsMesures(string $ingredientsMesures): self
+    public function setIngredients(string $ingredients): self
     {
-        $this->ingredientsMesures = $ingredientsMesures;
+        $this->ingredients = $ingredients;
+
+        return $this;
+    }
+
+    public function getVideo(): ?string
+    {
+        return $this->video;
+    }
+
+    public function setVideo(?string $video): self
+    {
+        $this->video = $video;
+
+        return $this;
+    }
+
+    public function getInstructions(): ?string
+    {
+        return $this->instructions;
+    }
+
+    public function setInstructions(string $instructions): self
+    {
+        $this->instructions = $instructions;
 
         return $this;
     }
