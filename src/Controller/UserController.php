@@ -32,108 +32,83 @@ class UserController extends AbstractController
     public function register(Request $request, UserPasswordEncoderInterface $encoder){
 
         $user = new User();
+        $user->setRoles((array)'ROLE_USER');
         $user->setCreatedAt(new \DateTime());
 
+        #Form creation
         $form = $this->createFormBuilder($user)
-            ->add('firstname', TextType::class, [
-
+            ->add('username', TextType::class, [
                 'attr' => [
-                    'class' => 'formtest mt-4',
-                    'placeholder' => 'First Name']
+                    'class'=>'form-group',
+                    'placeholder' => 'User name'
+                ]
+            ])
+            ->add('firstname', TextType::class, [
+                'attr' => [
+                    'class'=>'form-group',
+                    'placeholder'=> 'Firstname'
+                ]
             ])
             ->add('lastname', TextType::class, [
-
-                'attr' => [
-                    'class' => 'form-control mt-4 ',
-                    'placeholder' => 'Last Name'
+                'attr'=>[
+                    'class' => 'form-group',
+                    'placeholder' => 'Lastname'
                 ]
             ])
             ->add('email', EmailType::class, [
-
-                'attr' => [
-                    'class' => 'form-control mt-4',
+                'attr'=>[
+                    'class'=> 'form-group',
                     'placeholder' => 'Email'
                 ]
-
             ])
             ->add('password', PasswordType::class, [
-
-                'attr' => [
-                    'class' => 'form-control mt-4',
+                'attr'=>[
+                    'class'=>'form-group',
                     'placeholder' => 'Password'
                 ]
-
             ])
-            ->add('address', TextType::class, [
-
-                'attr' => [
-                    'class' => 'form-control mt-4',
-                    'placeholder' => 'Address'
-                ]
-
-            ])
-            ->add('zipcode', TextType::class, [
-
-                'attr' => [
-                    'class' => 'form-control mt-4',
-                    'placeholder' => 'Zipcode'
+            ->add('tou', CheckboxType::class, [
+                'mapped' => false,
+                'label' => 'I agree and accept #TERMS_OF_USE_LINK#',
+                'label_attr' => [
+                    'class' => 'show-label'
+                ],
+                'constraints' => [
+                    new IsTrue([
+                        'message' => 'I know, it\'s silly, but you must agree to our terms.'
+                    ])
                 ]
             ])
-            ->add('city', TextType::class, [
-
-                'attr' => [
-                    'class' => 'form-control mt-4',
-                    'placeholder' => 'City'
-                ]
+            ->add('submit', SubmitType::class, [
+                'label'=>'Sign Up'
             ])
-
-           ->add('tou', CheckboxType::class, [
-               'mapped' => false,
-               'label' => 'I agree and accept #TERMS_OF_USE_LINK#',
-               'label_attr' => [
-                   'class' => 'show-label'
-               ],
-               'constraints' => [
-                   new IsTrue([
-                       'message' => 'I know, it\'s silly, but you must agree to our terms.'
-                   ])
-               ]
-           ])
-
-           ->add('submit', SubmitType::class, [
-               'label' => "Submit"
-           ])
             ->getForm();
 
-        #Permet à Symfony de gérer les dernières saisies par l'utilisateur
-        $form->handleRequest( $request );
+        $form->handleRequest($request);
 
-        #si le formulaire est soumis et validé
-        if($form->isSubmitted() && $form->isValid()){
-
-//            if(true === $form['tou']->getData()){
-//                $user->setTou($this = ‘terms ok’);
-//
-//            }
-
-            #Encodage du mot passe
+        #If form is valid and submit
+        if ($form->isSubmitted() && $form->isValid())
+        {
+            #password encryption
             $user->setPassword(
                 $encoder->encodePassword(
                     $user, $user->getPassword()
                 )
             );
 
-            #Sauvegarde dans la BDD
+            #Save user data in DB
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('profile');
+            #TODO : Email confirmation & token
+
+            #Redirect user on creation confirmation page
+            return $this->redirectToRoute('user_completed');
         }
 
-        #Affichage du formulaire dans la page
         return $this->render('register/register.html.twig', [
-            'form' => $form->createView()
+            'form'=>$form->createView()
         ]);
 
     }

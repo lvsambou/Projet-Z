@@ -8,7 +8,6 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @ORM\Table(name="`user`")
  */
 class User implements UserInterface
 {
@@ -36,29 +35,39 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=80)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $firstname;
 
     /**
-     * @ORM\Column(type="string", length=80)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
     private $lastname;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=30)
+     */
+    private $username;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $address;
 
     /**
-     * @ORM\Column(type="string", length=80)
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $zipcode;
+
+    /**
+     * @ORM\Column(type="string", length=80, nullable=true)
      */
     private $city;
 
     /**
-     * @ORM\Column(type="string", length=25)
+     * @ORM\Column(type="string", length=50, nullable=true)
      */
-    private $zipcode;
+    private $region;
 
     /**
      * @ORM\Column(type="datetime")
@@ -71,19 +80,10 @@ class User implements UserInterface
     private $updatedAt;
 
     /**
-     * @ORM\Column(type="string", length=15, nullable=true)
-     */
-    private $dateofbirth;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $profilephoto;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $tou;
+
 
     public function getId(): ?int
     {
@@ -171,7 +171,7 @@ class User implements UserInterface
         return $this->firstname;
     }
 
-    public function setFirstname(string $firstname): self
+    public function setFirstname(?string $firstname): self
     {
         $this->firstname = $firstname;
 
@@ -183,33 +183,28 @@ class User implements UserInterface
         return $this->lastname;
     }
 
-    public function setLastname(string $lastname): self
+    public function setLastname(?string $lastname): self
     {
         $this->lastname = $lastname;
 
         return $this;
     }
 
-    public function getAddress(): ?string
+    public function setUsername(string $username): self
     {
-        return $this->address;
-    }
-
-    public function setAddress(string $address): self
-    {
-        $this->address = $address;
+        $this->username = $username;
 
         return $this;
     }
 
-    public function getCity(): ?string
+    public function getAdress(): ?string
     {
-        return $this->city;
+        return $this->adress;
     }
 
-    public function setCity(string $city): self
+    public function setAdress(?string $adress): self
     {
-        $this->city = $city;
+        $this->adress = $adress;
 
         return $this;
     }
@@ -219,9 +214,33 @@ class User implements UserInterface
         return $this->zipcode;
     }
 
-    public function setZipcode(string $zipcode): self
+    public function setZipcode(?string $zipcode): self
     {
         $this->zipcode = $zipcode;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(?string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    public function getRegion(): ?string
+    {
+        return $this->region;
+    }
+
+    public function setRegion(?string $region): self
+    {
+        $this->region = $region;
 
         return $this;
     }
@@ -243,33 +262,21 @@ class User implements UserInterface
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
 
         return $this;
     }
 
-    public function getDateofbirth(): ?string
+    public function getToken(): ?string
     {
-        return $this->dateofbirth;
+        return $this->token;
     }
 
-    public function setDateofbirth(string $dateofbirth): self
+    public function setToken(?string $token): self
     {
-        $this->dateofbirth = $dateofbirth;
-
-        return $this;
-    }
-
-    public function getProfilephoto(): ?string
-    {
-        return $this->profilephoto;
-    }
-
-    public function setProfilephoto(?string $profilephoto): self
-    {
-        $this->profilephoto = $profilephoto;
+        $this->token = $token;
 
         return $this;
     }
