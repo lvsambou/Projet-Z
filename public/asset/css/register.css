@@ -1,0 +1,45 @@
+body{
+    background: #F2ECE9 !important;
+    color: rgb(48, 45, 45);
+    padding: 5.691519vw;
+}
+
+/*.texte{*/
+/*    font-size: 1.70745589vw;*/
+/*    font-weight: bold italic;*/
+/*    color: rgb(41, 40, 40);*/
+/*}*/
+h1
+{
+    font-family: 'Dawning of a New Day', cursive;
+    font-size: 8.537279vw;
+}
+
+span
+{
+    font-size: 1.70745589vw;
+    font-weight: bold italic;
+    color: rgb(41, 40, 40);
+
+}
+
+.form-group{
+    height: 70px!important;
+    width: 400px!important;
+    border: none!important;
+    display: flex;
+}
+label
+{
+    display: none!important;
+}
+.show-label
+{
+    display: block!important;
+}
+.margin-tb
+{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
