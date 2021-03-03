@@ -69,7 +69,7 @@ class UserController extends AbstractController
             ])
             ->add('tou', CheckboxType::class, [
                 'mapped' => false,
-                'label' => 'I agree and accept #TERMS_OF_USE_LINK#',
+                'value'=>true,
                 'label_attr' => [
                     'class' => 'show-label'
                 ],
@@ -96,6 +96,10 @@ class UserController extends AbstractController
                 )
             );
 
+            $user->setTou(
+               'agree'
+            );
+
             #Save user data in DB
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
@@ -104,7 +108,7 @@ class UserController extends AbstractController
             #TODO : Email confirmation & token
 
             #Redirect user on creation confirmation page
-            return $this->redirectToRoute('user_completed');
+            return $this->redirectToRoute('profile');
         }
 
         return $this->render('register/register.html.twig', [
