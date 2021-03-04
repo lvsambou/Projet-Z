@@ -80,7 +80,7 @@ class UserController extends AbstractController
                 ]
             ])
             ->add('submit', SubmitType::class, [
-                'label'=>'Sign Up'
+                'label'=>'Submit'
             ])
             ->getForm();
 

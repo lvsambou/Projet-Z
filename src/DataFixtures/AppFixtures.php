@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\Farmer;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use App\Entity\Category;
 
 class AppFixtures extends Fixture
 {

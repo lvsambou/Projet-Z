@@ -4,34 +4,32 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    <link href="{{ asset('asset/css/test.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('asset/css/register.css') }}" rel="stylesheet"/>
 {% endblock %}
 
 {% block body %}
 <div class="p-3 mx-auto text-center">
-    <h1 class="display-4">Create Profile</h1>
+    <h1 class="display-4"></h1>
 </div>
 
-<div class="py-5 bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="container-fluid">
-                <div class="col-10 mx-auto">
-{#                {{ form( form) }}#}
-                    {{ form_start(form) }}
-                    {{ form_widget(form.username) }}
-                    {{ form_widget(form.firstname) }}
-                    {{ form_widget(form.lastname) }}
-                    {{ form_widget(form.email) }}
-                    {{ form_widget(form.password) }}
-                    {{ form_widget(form.tou) }}
-                    <span>I agree and accept the&nbsp</span><a href="{{ path('legals') }}">Terms of Use</a>
-                    {{ form_end(form) }}
-                </div>
-            </div>
+<div class="container-fluid wh-100-80 section-bg mt-4 section-bg">
+    <div class="col-8 mx-auto">
+        <h1>Sign In<span>now</span></h1>
+        {{ form_start(form) }}
+        {{ form_widget(form.username) }}
+        {{ form_widget(form.firstname) }}
+        {{ form_widget(form.lastname) }}
+        {{ form_widget(form.email) }}
+        {{ form_widget(form.password) }}
+        {{ form_widget(form.tou) }}
+        <span>I agree and accept the&nbsp</span><a href="{{ path('legals') }}">Terms of Use</a>
+        {{ form_end(form) }}
+
         </div>
-    </div>
+        <h4>Already have an account?</h4>
+        <a href="register.html.twig">Sign In</a>
 </div>
+
 
 {% endblock %}
 

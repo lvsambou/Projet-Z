@@ -2,20 +2,49 @@
 
 {% block title %}Contact Us{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('asset/css/contact.css') }}" rel="stylesheet"/>
+{% endblock %}
+
 {% block body %}
 <body>
-<div class="p-3 mx-auto text-center">
-    <h1 class="display-4">Contact Us</h1>
-        </div>
-        <div class="py-5 bg-light">
-            <div class="container">
+{#<div class="p-3 mx-auto text-center">#}
+{#    <h1 class="display-4">Contact Us</h1>#}
+{#        </div>#}
+{#        <div class="py-5 bg-light">#}
+{#            <div class="container">#}
                 <div class="container-fluid">
-                    <div class="col-10 mx-auto">
-                        {{ form(form) }}
+                    <div class="container-fluid wh-100-80 section-bg" >
+                        <h1 class="fs-54 mx-auto">For any enquiry, Contact us </h1>
+                        <form>
+                        <div class="col-10 mx-auto">
+                            <div class="form-row">
+                                {{ form_start(form) }}
+                                <div class="form-group col-md-6">
+                                {{ form_widget(form.lastname) }}
+                                </div>
+                                <div class="form-group col-md-6">
+                                {{ form_widget(form.firstname) }}
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                {{ form_widget(form.email) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_widget(form.phone) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form_widget(form.content) }}
+                            </div>
+                            {{ form_widget(form.submit) }}
+                        </form>
+                        </div>
                     </div>
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /.bg-light -->
+{#                </div> <!-- /.row -->#}
+{#            </div> <!-- /.container -->#}
+{#        </div> <!-- /.bg-light -->#}
 
 {% endblock %}
 
