@@ -1,10 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{{ path('index') }}">Foodies&Co</a>
+<nav class="ml-5 mb-4 navbar navbar-expand-lg navbar-light navBG fc-black">
+    <a class="fc-black fs-54 navbar-brand bitter italic d-flex flex-column" href="{{ path('index') }}">
+        <h1>Foodies<span class="fs-60 libre"> & </span>Co</h1>
+
+        <img src="{{ asset('asset/img/fourchette.png') }}" alt="Logo Foodie & Co">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse arvo" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
 {#            <li class="nav-item active">#}
 {#                <a class="nav-link" href="{{ path('default_home') }}">Home <span class="sr-only"></span></a>#}
@@ -13,7 +17,7 @@
                 <a class="nav-link" href="{{ path('generator') }}">Recipe generator</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ path('recipe', {'alias' : 'randomly'})}}">Random recipe</a>
+                <a class="nav-link" href="{{ path('random-recipe')}}">Random recipe</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

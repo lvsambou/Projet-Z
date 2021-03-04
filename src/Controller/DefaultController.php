@@ -14,7 +14,7 @@ class DefaultController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstr
      * ex. http://localhost:8000
      * @Route("/", name="animation", methods={"GET"})
      */
-    public function animation()
+    public function animation(): \Symfony\Component\HttpFoundation\Response
     {
         return $this->render("default/animation.html.twig");
     }

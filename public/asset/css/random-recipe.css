@@ -1,0 +1,192 @@
+/* Polices de la page et tailles */
+
+.dawning{
+    font-family: 'Dawning of a New Day', cursive;
+}
+
+.arvo{
+    font-family: 'Arvo', serif;
+}
+
+.bitter{
+    font-family: 'Bitter', serif;
+}
+
+.fs-54{
+    /* font-size: 54px; */
+    font-size: 2.830188679vw;
+}
+
+.fs-48{
+    /* font-size: 48px; */
+    font-size: 2.51572327vw;
+    font-weight: 900;
+}
+
+.fs-46{
+    /* font-size: 46px; */
+    font-size: 2.410901467vw;
+    font-weight: 900;
+}
+
+.fs-36{
+    /* font-size: 36px; */
+    font-size: 1.88679vw;
+}
+
+.fs-32{
+    /* font-size: 32px; */
+    font-size: 1.6771488469vw;
+}
+
+.fs-30{
+    /* font-size: 30px; */
+    font-size: 1.572327044vw;
+}
+
+.fs-25{
+    font-size: 1.415094339vw;
+    /* font-size: 25px; */
+}
+
+.fs-20{
+    font-size: 1.257861635vw;
+    /* font-size: 20px; */
+}
+.fs-18{
+    font-size: 0.9433962264150944vw !important;
+    /* font-size: 20px; */
+}
+.p-lh{
+    line-height: 170%;
+}
+
+/* Margin remover */
+.no-margin {
+    margin: 0 !important;
+}
+
+/* width properties*/
+.wh-100-80{
+    height: 100% !important;
+    width: 80% !important;
+}
+
+.wh-100-50{
+    height: 100%!important;
+    width: 50%!important;
+}
+
+/*list param*/
+.li-style {
+    list-style:circle !important;
+}
+
+.li-none {
+    list-style-type: none !important;
+}
+
+/* BG color*/
+
+.full-bg{
+    background-color:#FFFDFA;
+}
+
+/* background sections color */
+.section-bg{
+    background-color: #F2ECE9;
+}
+
+.input-bg {
+    background-color: #ECE1CF!important;
+}
+
+/* IMG meal settings*/
+.wh-img {
+    height: 37.26273726273726vh;
+    width: 39.270833333333336vw;
+}
+
+/*Icon sets and border none type*/
+.border-none{
+    border: none;
+}
+
+.icon{
+    height: 3.0964360587002098vw;
+    width: 3.0964360587002098vw;
+}
+
+/*Producteur submit btn and text input*/
+.submitgo{
+    width: 69px;
+    height: 39px;
+    background: #CCC3B5;
+}
+
+
+
+/* Media queries */
+/* Adapt view for Ipad and down with devices*/
+@media screen and (max-width: 770px){
+    .wh-img {
+        height:fit-content;
+        width: fit-content;
+    }
+
+
+    .wh-100-80 {
+        height: 100%!important;
+        width: 100%!important;
+    }
+    .ml-5 {
+        margin-left: -3px!important;
+    }
+
+    /*Font sizes*/
+    .fs-54{
+        font-size: 34px;
+        /* font-size: 2.830188679vw; */
+    }
+
+    .fs-48{
+        font-size: 18px;
+        /* font-size: 2.51572327vw; */
+        font-weight: 900;
+    }
+
+    .fs-46{
+        font-size: 16px;
+        /* font-size: 2.410901467vw; */
+        font-weight: 900;
+    }
+
+    .fs-36{
+        font-size: 16px;
+        /* font-size: 1.88679vw; */
+    }
+
+    .fs-32{
+        font-size: 14px;
+        /* font-size: 1.6771488469vw; */
+    }
+
+    .fs-30{
+        font-size: 10px;
+        /* font-size: 1.572327044vw; */
+    }
+
+    .fs-25{
+        /* font-size: 1.415094339vw; */
+        font-size: 13px;
+    }
+
+    .fs-20{
+        /* font-size: 1.257861635vw; */
+        font-size: 10px;
+    }
+    .fs-18{
+        /* font-size: 0.9433962264150944vw; */
+        font-size: 8px !important;
+    }
+}
