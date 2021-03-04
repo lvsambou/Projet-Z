@@ -1,18 +1,23 @@
-body{
+body
+{
+/*background-color: white;*/
+    background-color: #F2ECE9;
+}
+.container-fluid
+{
     background: #F2ECE9 !important;
     color: rgb(48, 45, 45);
     padding: 5.691519vw;
 }
 
-/*.texte{*/
-/*    font-size: 1.70745589vw;*/
-/*    font-weight: bold italic;*/
-/*    color: rgb(41, 40, 40);*/
-/*}*/
 h1
 {
     font-family: 'Dawning of a New Day', cursive;
-    font-size: 8.537279vw;
+    /*font-size: 8.537279vw;*/
+    font-size: 1.70745589vw;
+    font-weight: bold italic;
+    color: rgb(41, 40, 40);
+
 }
 
 span
@@ -23,7 +28,8 @@ span
 
 }
 
-.form-group{
+.form-group
+{
     height: 70px!important;
     width: 400px!important;
     border: none!important;
@@ -42,4 +48,18 @@ label
     margin-top: 1%;
     margin-bottom: 1%;
 }
+span
+{
 
+}
+h3
+{
+    text-align: right;
+
+}
+a
+{
+    white-space: nowrap;
+    text-align: right;
+    text-decoration: none;
+}

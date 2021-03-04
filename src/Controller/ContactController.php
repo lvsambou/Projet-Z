@@ -30,43 +30,50 @@ class ContactController extends AbstractController
             ->add('lastname', TextType::class, [
 
                 'attr' => [
-                    'class' => 'form-control mt-4',
-                    'placeholder' => 'Last Name'
+                    'class' => 'form-control',
+                    'placeholder' => 'Surname',
+
+
                 ]
             ])
             ->add('firstname', TextType::class, [
 
                 'attr' => [
-                    'class' => 'form-control mt-4',
-                    'placeholder' => 'First Name'
+                    'class' => 'form-control',
+                    'placeholder' => 'Name',
+
+
                 ]
             ])
             ->add('email', EmailType::class, [
 
                 'attr' => [
-                    'class' => 'form-control mt-4',
+                    'class' => 'form-control',
                     'placeholder' => 'Email'
                 ]
             ])
             ->add('phone', TelType::class, [
 
                 'attr'=> [
-                    'class' => 'form-control mt-4',
-                    'placeholder' => 'Phone number'
+                    'class' => 'form-control',
+                    'placeholder' => 'Phone number',
+
                 ]
             ])
             ->add('subject', TextType::class, [
 
                 'attr' => [
-                    'class' => 'form-control mt-4',
+                    'class' => 'form-control',
                     'placeholder' => 'Subject'
+
                 ]
 
             ])
             ->add('content', TextareaType::class, [
                 'attr' => [
-                    'class' => 'form-control mt-4',
-                    'placeholder' => 'Content'
+                    'class' => 'form-control',
+                    'placeholder' => 'Message',
+                    'rows' => '8'
                 ]
 
             ])
