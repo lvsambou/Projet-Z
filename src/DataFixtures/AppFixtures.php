@@ -6,7 +6,6 @@ use App\Entity\Farmer;
 use App\Entity\Category;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use App\Entity\Category;
 
 class AppFixtures extends Fixture
 {

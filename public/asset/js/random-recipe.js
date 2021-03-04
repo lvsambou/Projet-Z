@@ -37,17 +37,14 @@ const createMeal = (meal) => {
     </div>
     
 
-    <div class="row ml-5 wh-100-80 mt-3 d-flex justify-content-end fs-18 bitter">
-        <img class="icon img-fluid" src="/public/asset/img/favorites.PNG'" alt="Ajouter la recette aux favoris">
-        <div class=" mt-2 ml-1">Add to favorite recipes</div>
-
-        <a href="javascript:window.print()">
-        <img class="icon ml-4" src="{{ asset('asset/img/print.png') }}" alt="Imprimer la recette">
-        <div class=" mt-2 ml-1">Print</div>
+    <div class="row ml-2 wh-100-80 mt-3 d-flex justify-content-end fs-18 bitter">
+        <a class="d-flex flex-row" href="javascript:window.print()">
+        <img class="icon ml-4" src="asset/img/print.png" alt="Imprimer la recette">
+        <div class=" mt-2 ml-1 bitter fs-18">Print</div>
         </a>
         
-        <img class="icon ml-4" src="{{ asset('asset/img/share.png') }}" alt="Partager la recette">
-        <div class=" mt-2 ml-1">Share</div>
+        <img class="icon ml-4" src="asset/img/share.png" alt="Partager la recette">
+        <div class=" mt-2 ml-1 bitter fs-18">Share</div>
     </div>
 
     <div class="row wh-100-80 mt-3 d-flex justify-content-center fs-18 bitter text-center">

@@ -18,7 +18,7 @@
 
 .fs-60{
      /*font-size: 60px !important;*/
-    font-size: 3.830188679vw !important;
+    font-size: 3.230188679vw !important;
 }
 
 .fs-54{
@@ -72,7 +72,7 @@
 }
 
 .navBG {
-    background-color: #fff3ef !important;
+    background-color: #FFFDFA!important;
 }
 
 .fc-black {
@@ -83,3 +83,22 @@ a{
     color: black!important;
 }
 
+/*Test animation navbar*/
+
+.navAnimation{
+    display: inline-block;
+}
+
+.navAnimation:after {
+    content: "";
+    display: block;
+    height: 0.25em;
+    width: 0%;
+    margin-bottom: 9px;
+    background-color: #000;
+    transition: width 0.4s;
+}
+
+.navAnimation:hover:after {
+    width: 100%;
+}
