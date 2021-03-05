@@ -8,7 +8,12 @@
 {% endblock %}
 
 {% block body %}
-    <h1 class= "fs-54 dawning">Recipe <span class= "fs-32 arvo">card :</span></h1>
+
+
+    <div class="d-flex justify-content-center flex-column">
+    <div class="section-bg wh-100-80 align-self-center">
+
+        <h1 class= "ml-5 fs-54 dawning mt-4">Recipe <span class= "fs-32 arvo">card :</span></h1>
 
     <div class="p-3 mx-auto text-center">
         <h2 class= "fs-48 bitter  ">Teriyaki chicken bites <span class= "fs-32 arvo"></span></h2>
@@ -89,11 +94,12 @@
     </div>
     <div class=" mx-auto text-center fs-18 arvo d-flex justify-content-center">
         <div class="ratio ratio-16x9 mb-4">
-            <iframe src="https://www.youtube.com/embed/r9nyr68SSaE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/watch?v=ZGt0pJ0BEHM&ab_channel=TheCookingFoodie" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
 
     </div>
+
 
     <div class="container-fluid wh-100-80 section-bg mt-4 section-bg">
         <div class="p-2 mx-auto text-center arvo fw-bolder dawning mb-0 mt-3">
@@ -103,9 +109,10 @@
 
             <div class="col d-flex justify-content-center mb-3">
                 <input class="fs-20 bitter fw-italic border-0 p-2 input-bg" type="text" placeholder="Enter region name">
-                <a href="#"><input class=" bitter fw-bold fs-36 border-none submitgo ml-2" type="submit" value="Go !"></a>
+                <a href="{{ path('farmer') }}"><input class=" bitter fw-bold fs-36 border-none submitgo ml-2" type="submit" value="Go !"></a>
             </div>
         </div>
+    </div>
     </div>
 
 

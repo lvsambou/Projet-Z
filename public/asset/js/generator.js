@@ -1,19 +1,57 @@
-//get the events on 'Get your random recipe 🎲' button
-const get_meal_btn = document.getElementById('get_meal');
-//get the meal display html part, for displaying after the random recipe
-const meal_container = document.getElementById('meal');
+const searchBtn = document.getElementById('search-btn');
+const mealList = document.getElementById('meal');
+const mealDetailsContent = document.querySelector('.meal-details-content');
 
-// on click event on 'Get your random recipe 🎲' button activate connexion to mealDB API with random option
-get_meal_btn.addEventListener('click', () => {
-    fetch('https://www.themealdb.com/api/json/v1/1/random.php')
-        .then(res => res.json())
-        .then(res => {
-            createMeal(res.meals[0]);
+//event listeners for displays
+searchBtn.addEventListener('click', getMealList);
+mealList.addEventListener('click', getMealRecipe);
+// recipeCloseBtn.addEventListener('click', () => {
+//     mealDetailsContent.parentElement.classList.remove('showRecipe');
+// });
+
+function getMealList(){
+    let searchInputTxt = document.getElementById('search-input').value.trim();
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`)
+        .then(response => response.json())
+        .then(data => {
+            let html = "";
+            if(data.meals){
+                data.meals.forEach(meal => {
+                    html += `
+                        <div class="col mt-5 d-flex flex-column justify-content-center meal-item" data-id="${meal.idMeal}">
+                            <img src="${meal.strMealThumb}" class="wh-last-img border-radius img-fluid card-img-top meal-img" alt="${meal.strMeal}">
+                            <div class="d-flex flex-column wh-100-80">
+                                <h4 class="ml-4 fs-25 mt-3 card-title align-self-start">${meal.strMeal}</h4>
+                                <a id="" class="align-self-end dawning fs-20 recipe-btn" href="#up">See more...</a>
+                            </div>
+                        </div>
+                    `;
+                });
+                mealList.classList.remove('notFound');
+            } else{
+                html = "Sorry, we didn't have your ingredient in our catalogue... But don't worry we will have it soon. For now try again with something else ! 😉";
+                mealList.classList.add('notFound');
+            }
+
+            mealList.innerHTML = html;
         });
-});
+}
 
-// Create the random meal view with API response to random querry
-const createMeal = (meal) => {
+// get recipe of the meal
+function getMealRecipe(e){
+    e.preventDefault();
+    if(e.target.classList.contains('recipe-btn')){
+        let mealItem = e.target.parentElement.parentElement;
+        fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`)
+            .then(response => response.json())
+            .then(data => mealRecipeModal(data.meals));
+    }
+}
+
+// create a recipe card
+function mealRecipeModal(meal){
+    console.log(meal);
+    meal = meal[0];
     const ingredients = [];
     // Get all ingredients from the object. Up to 20
     for(let i=1; i<=20; i++) {
@@ -24,11 +62,10 @@ const createMeal = (meal) => {
             break;
         }
     }
-
-    const newInnerHTML = `
+    let html = `
     <div class="container-fluid wh-100-80 section-bg">
     <div class="p-3 mx-auto text-center">
-        <h2 class= "fs-46 bitter  ">${meal.strMeal}</h2>
+        <h2 id="" class= "fs-46 bitter  ">${meal.strMeal}</h2>
     </div>
     <div class="d-flex justify-content-center">
         <div class="overflow-hidden d-flex justify-content-center wh-img align-self-center">
@@ -111,5 +148,6 @@ const createMeal = (meal) => {
 
 	`;
 
-    meal_container.innerHTML = newInnerHTML;
+    mealDetailsContent.innerHTML = html;
+    mealDetailsContent.parentElement.classList.add('showRecipe');
 }

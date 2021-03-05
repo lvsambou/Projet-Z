@@ -3,7 +3,175 @@
 {% block title %}
     {{ category.name | title }} | Food & Co, Let's cook !
 {% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('asset/css/category.css') }}" rel="stylesheet"/>
+{% endblock %}
 
 {% block body %}
-    <h1>Page {{ category.name }}</h1>
+    <div class="container-fluid wh-100-80 d-flex justify-content-center">
+
+        <div class="row ">
+            <div class="col section-bg  ">
+
+                <div class="p-3 mx-auto text-start">
+                    <h1 class= "fs-54 dawning">{{ category.name }} <span class= "fs-32 arvo">recipes</span></h1>
+                </div>
+
+                <div class="container wh-100-80">
+                    <div class="row">
+
+
+                        <div class="col-md-4 mt-4">
+                            <div class="card section-bg border-none text-white mb-4  ">
+                                <a href="{{ path('recipe') }}">
+                                <div class="card-body">
+                                    <img class="img-fluid img-border" src="{{ asset('asset/img/chickenbites.jpg') }}" alt="">
+                                    <h4 class="mt-2 card-title text-center fs-20 bitter"><a class="btn" href="">Teriyaki chicken bites</a></h4>
+
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 mt-4">
+                            <div class="card section-bg border-none text-white mb-4  ">
+                                <div class="card-body">
+                                    <img class="img-fluid img-border" src="{{ asset('asset/img/alfredo.jpg') }}" alt="">
+                                    <h4 class="mt-2 card-title text-center fs-20 bitter"><a class="btn" href="">Alfredo chicken</a></h4>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 mt-4">
+                            <div class="card section-bg border-none text-white mb-4  ">
+                                <div class="card-body">
+                                    <img class="img-fluid img-border" src="{{ asset('asset/img/lentilsrice.jpg') }}" alt="">
+                                    <h4 class="mt-2 card-title text-center fs-20 bitter"><a class="btn" href="">Lentils & rice</a></h4>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-4 mt-4">
+                            <div class="card section-bg border-none text-white mb-4  ">
+                                <div class="card-body">
+                                    <img class="img-fluid img-border" src="{{ asset('asset/img/alfredo.jpg') }}" alt="">
+                                    <h4 class="mt-2 card-title text-center fs-20 bitter"><a class="btn" href="">Alfredo chicken</a></h4>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-4 mt-4">
+                            <div class="card section-bg border-none text-white mb-4  ">
+                                <div class="card-body">
+                                    <img class="img-fluid img-border" src="{{ asset('asset/img/chickenbites.jpg') }}" alt="">
+                                    <h4 class="mt-2 card-title text-center fs-20 bitter"><a class="btn" href="">Teriyaki chicken bites</a></h4>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 mt-4">
+                            <div class="card section-bg border-none text-white mb-4  ">
+                                <div class="card-body">
+                                    <img class="img-fluid img-border" src="{{ asset('asset/img/lentilsrice.jpg') }}" alt="">
+                                    <h4 class="mt-2 card-title text-center fs-20 bitter"><a class="btn" href="">Lentils & rice</a></h4>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-4 mt-4">
+                            <div class="card section-bg border-none text-white mb-4  ">
+                                <div class="card-body">
+                                    <img class="img-fluid img-border" src="{{ asset('asset/img/chickenbites.jpg') }}" alt="">
+                                    <h4 class="mt-2 card-title text-center fs-20 bitter"><a class="btn" href="">Teriyaki chicken bites</a></h4>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 mt-4">
+                            <div class="card section-bg border-none text-white mb-4  ">
+                                <div class="card-body">
+                                    <img class="img-fluid img-border" src="{{ asset('asset/img/alfredo.jpg') }}" alt="">
+                                    <h4 class="mt-2 card-title text-center fs-20 bitter"><a class="btn" href="">Alfredo chicken</a></h4>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 mt-4">
+                            <div class="card section-bg border-none text-white mb-4  ">
+                                <div class="card-body">
+                                    <img class="img-fluid img-border" src="{{ asset('asset/img/lentilsrice.jpg') }}" alt="">
+                                    <h4 class="mt-2 card-title text-center fs-20 bitter"><a class="btn" href="">Lentils & rice</a></h4>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 mt-4">
+                            <div class="card section-bg border-none text-white mb-4  ">
+                                <div class="card-body">
+                                    <img class="img-fluid img-border" src="{{ asset('asset/img/alfredo.jpg') }}" alt="">
+                                    <h4 class="mt-2 card-title text-center fs-20 bitter"><a class="btn" href="">Alfredo chicken</a></h4>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 mt-4">
+                            <div class="card section-bg border-none text-white mb-4  ">
+                                <div class="card-body">
+                                    <img class="img-fluid img-border" src="{{ asset('asset/img/lentilsrice.jpg') }}" alt="">
+                                    <h4 class="mt-2 card-title text-center fs-20 bitter"><a class="btn" href="">Lentils & rice</a></h4>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-4 mt-4">
+                            <div class="card section-bg border-none text-white mb-4  ">
+                                <div class="card-body">
+                                    <img class="img-fluid img-border" src="{{ asset('asset/img/chickenbites.jpg') }}" alt="">
+                                    <h4 class="mt-2 card-title text-center fs-20 bitter"><a class="btn" href="">Teriyaki chicken bites</a></h4>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+
+
+
 {% endblock %}

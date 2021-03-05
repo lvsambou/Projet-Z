@@ -33,10 +33,10 @@ class RecipeGeneratorController extends AbstractController
     }
 
     /**
-     * ex. http://localhost:8000/generator/results/{alias}
-     * @Route("/generator/results/{alias}", name="recipe", methods={"GET"})
+     * ex. http://localhost:8000/recipe
+     * @Route("/recipe", name="recipe", methods={"GET"})
      */
-    public function recipe($alias): Response
+    public function recipe(): Response
     {
         return $this->render('recipegenerator/recipe.html.twig');
     }

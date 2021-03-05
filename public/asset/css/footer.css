@@ -1,0 +1,297 @@
+/* Polices du site et tailles */
+
+
+
+.arvo{
+    font-family: 'Arvo', serif;
+}
+
+.bitter{
+    font-family: 'Bitter', serif;
+}
+
+.fs-54{
+    /* font-size: 54px; */
+    font-size: 2.830188679vw;
+}
+
+.fs-48{
+    /* font-size: 48px; */
+    font-size: 2.51572327vw;
+    font-weight: 900;
+}
+
+.fs-46{
+    /* font-size: 46px; */
+    font-size: 2.410901467vw;
+    font-weight: 900;
+}
+
+.fs-36{
+    /* font-size: 36px; */
+    font-size: 1.88679vw;
+}
+
+.fs-32{
+    /* font-size: 32px; */
+    font-size: 1.6771488469vw;
+    font-weight: 700;
+}
+
+.fs-30{
+    /* font-size: 30px; */
+    font-size: 1.572327044vw;
+}
+
+.fs-25{
+    font-size: 1.415094339vw;
+    /* font-size: 25px; */
+}
+
+.fs-20{
+    font-size: 1.257861635vw;
+    /* font-size: 20px; */
+}
+.fs-18{
+    font-size: 0.9433962264150944vw;
+    /* font-size: 20px; */
+}
+.p-lh{
+    line-height: 170%;
+}
+
+/* Margin remover */
+.no-margin {
+    margin: 0 !important;
+}
+
+/* width properties*/
+.wh-100-80{
+    height: 100% !important;
+    width: 80% !important;
+}
+
+.wh-100-50{
+    height: 100%!important;
+    width: 50%!important;
+}
+
+/*list param*/
+.li-style {
+    list-style:circle !important;
+}
+
+/* BG color*/
+
+.full-bg{
+    background-color:#FFFDFA;
+}
+
+.filigrane {
+    background: url("/public/asset/img/motif.svg");
+
+}
+
+
+/* background sections color */
+.section-bg{
+    background-color: #F2ECE9;
+    width: 100%;
+    height: 100%;
+    opacity: 100%;
+}
+
+.input-bg {
+    background-color: #ECE1CF!important;
+}
+
+
+
+.centerdiv{
+    display: flex;
+    justify-content: center;
+}
+
+.imgdish.place{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dish{
+    height:27vh;
+    width: 10vw;
+    opacity: 20%;
+}
+
+.color-btn {
+    background-color: #CDC2B1;
+}
+
+/* Media queries */
+/* Adapt view for Ipad and down with devices*/
+@media screen and (max-width: 770px){
+    .wh-100-80 {
+        height: 100%!important;
+        width: 100%!important;
+    }
+    .ml-5 {
+        margin-left: -3px!important;
+    }
+
+    /*Font sizes*/
+    .fs-54{
+        font-size: 34px;
+        /* font-size: 2.830188679vw; */
+    }
+
+    .fs-48{
+        font-size: 18px;
+        /* font-size: 2.51572327vw; */
+        font-weight: 900;
+    }
+
+    .fs-46{
+        font-size: 16px;
+        /* font-size: 2.410901467vw; */
+        font-weight: 900;
+    }
+
+    .fs-36{
+        font-size: 16px;
+        /* font-size: 1.88679vw; */
+    }
+
+    .fs-32{
+        font-size: 14px;
+        font-weight: 700;
+        /* font-size: 1.6771488469vw; */
+    }
+
+    .fs-30{
+        font-size: 10px;
+        /* font-size: 1.572327044vw; */
+    }
+
+    .fs-25{
+        /* font-size: 1.415094339vw; */
+        font-size: 13px;
+    }
+
+    .fs-20{
+        /* font-size: 1.257861635vw; */
+        font-size: 10px;
+    }
+    .fs-18{
+        /* font-size: 0.9433962264150944vw; */
+        font-size: 8px;
+    }
+}
+
+
+
+.socialmedia{
+    height: 6.872370266479663vh;
+
+    width: 34.2207792207792208vw;
+
+}
+
+
+.contact{
+    color: black !important;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+/***************CSS Share BTN**************/
+.toggle{
+    width: 50px;
+    height: 50px;
+    background: #AB8F71;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+}
+
+.toggle::before {
+    content: '\f1e0';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    color: white;
+    font-family: 'Font Awesome 5 Free', serif;
+    font-weight: 900;
+    text-align: center;
+    line-height: 50px;
+    font-size: 22px;
+}
+
+
+
+
+.share {
+    position: fixed;
+    bottom: 70px;
+    right: 70px;
+}
+
+.share.active .toggle::before {
+    content: '\f00d';
+    font-size: 2rem;
+}
+.share {
+    position: fixed;
+    bottom: 70px;
+    right: 70px;
+}
+.share ol {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+
+.share ol li {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all .3s;
+    opacity: 0;
+}
+
+.share ol li a {
+    color: black;
+}
+
+.share.active ol li {
+    opacity: 1;
+    transition: all .3s;
+}
+
+
+.share.active ol li:nth-child(1) {
+    transition-delay: .1s;
+    transform: translateX(60px);
+}
+
+.share.active ol li:nth-child(2) {
+    transition-delay: .2s;
+    transform: translateY(60px);
+}
+
+.share.active ol li:nth-child(3) {
+    transition-delay: .3s;
+    transform: translateX(-60px);
+}
+
+.share.active ol li:nth-child(4) {
+    transition-delay: .4s;
+    transform: translateY(-60px);
+}

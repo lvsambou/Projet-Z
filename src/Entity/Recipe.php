@@ -27,10 +27,6 @@ class Recipe
      */
     private $img;
 
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private $category;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -51,6 +47,17 @@ class Recipe
      * @ORM\Column(type="text")
      */
     private $instructions;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="recipes")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $category;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $alias;
 
     public function getId(): ?int
     {
@@ -137,6 +144,18 @@ class Recipe
     public function setInstructions(string $instructions): self
     {
         $this->instructions = $instructions;
+
+        return $this;
+    }
+
+    public function getAlias(): ?string
+    {
+        return $this->alias;
+    }
+
+    public function setAlias(?string $alias): self
+    {
+        $this->alias = $alias;
 
         return $this;
     }
