@@ -1,0 +1,48 @@
+
+.dawning{
+    font-family: 'Dawning of a New Day', cursive;
+}
+
+.arvo{
+    font-family: 'Arvo', serif;
+}
+
+.bitter{
+    font-family: 'Bitter', serif;
+}
+
+.fs-54{
+    font-size: 54px;
+}
+
+.fs-32{
+    font-size: 32px;
+}
+
+.fs-20{
+    font-size: 20px;
+}
+
+.wh-100-80{
+    height: 100% !important;
+    width: 80% !important;
+}
+
+.full-bg{
+    background-color:#FFFDFA;
+}
+
+.section-bg{
+    background-color: #F2ECE9;
+}
+
+.border-none{
+    border: none;
+}
+
+.img-border{
+    border-radius: 40px;
+    height: 225px;
+    width: 206px;
+}
+

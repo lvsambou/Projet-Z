@@ -3,10 +3,72 @@
     Recipe Generator | Food'n'Co
 {% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('asset/css/generator.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('asset/css/index.css') }}" rel="stylesheet"/>
+{% endblock %}
+
 {% block body %}
-    <div class="p-3 mx-auto text-center">
-    <h1 class="display-4">Recipe Generator</h1>
-</div>
+    <div class="container-fluid wh-100-65 section-bg">
+        <div class="p-4">
+            <h1 class= "mt-2 fs-54 dawning">Recipe <span class= "fs-32 arvo">generator </span></h1>
+        </div>
 
+        <div class="p-2 mx-auto text-center mt-1">
+            <h2 id="" class= "fs-46 dawning">Choose your ingredient :</h2>
+        </div>
 
+        <div class="d-flex justify-content-center mt-3 p-2">
+            <label>
+                <input id="search-input" class="fs-25 bg-input form-control form-control-lg arvo italic" type="text" placeholder="ex. ' Tomato '">
+            </label>
+        </div>
+
+        <div class="d-flex justify-content-center p-2 mb-3 pb-5">
+            <a href="#result">
+            <button id="search-btn" type="button" class="fs-25 p-2 btn btn-outline-light fc-black bitter bg-btn fw-bold">Generate your recipe</button>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="d-flex justify-content-center mb-3">
+        <img id="up" src="{{ asset('asset/img/rouleau.png') }}" alt="rouleau de patisserie">
+    </div>
+
+    <div id="" class="container-fluid wh-100-65 section-bg meal-details">
+        <div class="meal-details-content">
+
+        </div>
+
+    </div>
+
+    {#Display none tant qu'il n'y a pas eu de submit#}
+    {#Section for displaying meal search result(s)#}
+    <div id="" class="container-fluid wh-100-65 section-bg mb-4">
+        <div class="p-1">
+            <h1 id="result" class= "mt-2 fs-54 dawning"><span class= "fs-32 arvo"> - </span>&nbsp;Recipe <span class= "fs-32 arvo">generator results &nbsp;&nbsp;- </span></h1>
+        </div>
+        <div id="meal" class="pb-5 row row-cols-1  row-cols-md-3">
+
+        </div>
+    </div>
+
+    {#Display selected recipe#}
+    <div id="" class="container-fluid wh-100-65 section-bg meal-details">
+        <div class="meal-details-content">
+
+        </div>
+
+    </div>
+
+    <div class="mb-4 d-flex justify-content-center">
+        <img id="" src="{{ asset('asset/img/footerseparator.png') }}" alt="image de séparation avec footer">
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('asset/js/generator.js') }}"></script>
 {% endblock %}

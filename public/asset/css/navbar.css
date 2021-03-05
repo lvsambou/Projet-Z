@@ -83,6 +83,9 @@ a{
     color: black!important;
 }
 
+.grey {
+    color: #a1a1a1;
+}
 /*Test animation navbar*/
 
 .navAnimation{

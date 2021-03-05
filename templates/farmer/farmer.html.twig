@@ -1,12 +1,132 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Your farmer near you{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('asset/css/producer.css') }}" rel="stylesheet"/>
+{% endblock %}
+{% block title %}Foodies&Co - Producer{% endblock %}
 
 {% block body %}
-    <div class="p-3 mx-auto text-center">
-        <h1>Farmer</h1>
-        <h2> Résultats de recherche TO DO</h2>
+
+    <div class="container-fluid">
+        <div class="container-fluid wh-100-80 section-bg">
+
+            <h3 class= "fs-54 dawning">Producer <span class= "fs-32 arvo">in your region :</span></h3>
+
+            <!-- CARD GROUP 1 -->
+
+            <div class="card-group">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <a href="https://www.bigbarn.co.uk/producer/callington/crockett-farm-25757/?partner=CQjlsAi6Iw">
+                        <img src="{{ asset('asset/img/producer1.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="font-weight-bold" class="card-title">Jerry White</h6>
+                        </div>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <img src="{{ asset('asset/img/countryside-1822659_1280.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="font-weight-bold" class="card-title">Catherine Roy</h6>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <img src="{{ asset('asset/img/producer3.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="font-weight-bold" class="card-title">John Right</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD GROUP 2 -->
+
+            <div class="card-group">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <img src="{{ asset('asset/img/producer1.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="font-weight-bold" class="card-title">Oliver James</h6>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <img src="{{ asset('asset/img/producer3.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="font-weight-bold" class="card-title">Jacob Michael</h6>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <img src="{{ asset('asset/img/countryside-1822659_1280.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="font-weight-bold" class="card-title">Megan Ava</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD GROUP 3 -->
+
+            <div class="card-group">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <img src="{{ asset('asset/img/countryside-1822659_1280.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="font-weight-bold" class="card-title">Sophie Taylor</h6>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <img src="{{ asset('asset/img/producer1.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="font-weight-bold" class="card-title">William Jones</h6>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <img src="{{ asset('asset/img/countryside-1822659_1280.jpg') }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h6 class="font-weight-bold" class="card-title">Lily Evans</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
     </div>
+
+    <div class="d-flex justify-content-center">
+        <img src="{{ asset('asset/img/branche.png') }}" alt="">
+    </div>
+
+    <!-- ************************* Additionnal features comming soon *********************************** -->
+    <!-- did you make this recipe/ comment section-->
+
+
+    <!-- <div class="align-content">
+        <div class="class section-bg2 align-content">
+
+            <div class="dawning fs-46 text-center"> Did you make this recipe ?</div>
+            <br>
+            <span class="arvo fs-30 text-center">Share your experience with the Foodies community with a picture or a comment:</span>
+
+            <div class= ""><input class=" bitter fw-italic text-muted " type="text" placeholder="Write a comment"></div>
+            <div class= ""><a href="#"><input class=" bitter fw-bold fs-36 border-none submitpost" type="submit" value="Post"></a></div>
+
+            <p class="text-decoration-none bitter fs-20 text-start"><a href="#"> +  Add a picture of your dish</a></p>
+
+        </div>
+
+    </div> -->
+
 
 
 {% endblock %}

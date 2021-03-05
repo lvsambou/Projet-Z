@@ -46,7 +46,7 @@ class DefaultController extends \Symfony\Bundle\FrameworkBundle\Controller\Abstr
     /**
      * Page - legal terms, privacy policy, GDPR
      * url - http://localhost:8000/legals
-     * @Route("/legals", name="legals", methods={"legals"})
+     * @Route("/legals", name="legals", methods={"GET"})
      */
     public function legals(): \Symfony\Component\HttpFoundation\Response
     {
